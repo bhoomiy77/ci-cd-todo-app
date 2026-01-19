@@ -7,6 +7,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
+
 app.get("/viewtodos", (req, res) => {
   db.query("SELECT * FROM todos", (err, result) => {
     if (err) {
